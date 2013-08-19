@@ -1,0 +1,5 @@
+  require "bundler/gem_tasks"
+  require "./lib/waf"
+  require "resque/tasks"
+  puts "In right rake file, congrats!"
+  # require "bundler/gem_tasks"

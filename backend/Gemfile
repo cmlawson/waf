@@ -1,0 +1,14 @@
+source 'https://rubygems.org'
+
+# Specify your gem's dependencies in rubber.gemspec
+gemspec
+
+group :jruby do
+  #gem 'jruby-stemmer'
+end
+
+group :mri do
+  # gem 'bson_ext'
+  # gem 'fast-stemmer'
+  # gem 'tomz-libsvm-ruby-swig'
+end

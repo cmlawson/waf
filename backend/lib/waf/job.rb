@@ -1,0 +1,3 @@
+module Waf::Job
+
+end
