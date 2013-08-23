@@ -164,6 +164,7 @@ module Waf::Models
       def get_release_date()
         info = @page.search('//*[@id="main"]/div[1]/div[3]/ul/li[3]/span[2]')
         return nil if !info[0]
+        return nil if info[0].text == ""
         return Date.parse(info[0].text)
       end
 

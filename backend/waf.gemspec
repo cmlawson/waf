@@ -20,14 +20,21 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'rake'
   gem.add_dependency 'thin'
-  gem.add_dependency 'json'
-  gem.add_dependency 'require_all'
   gem.add_dependency 'resque'
-  gem.add_dependency 'god'
+  gem.add_dependency 'sidekiq'
+  gem.add_dependency 'redis'
+  gem.add_dependency 'musicbrainz'
   gem.add_dependency 'mysql2'
   gem.add_dependency 'net-ssh-gateway'
   gem.add_dependency 'mechanize'
   gem.add_dependency 'sanitize'
+  gem.add_dependency 'awesome_print'
+  gem.add_dependency 'json'
+  gem.add_dependency 'hpricot'
+  gem.add_dependency 'require_all'
+  gem.add_dependency 'discogs'
+  gem.add_dependency 'sidekiq'
+
 
   gem.add_development_dependency 'awesome_print'
 end

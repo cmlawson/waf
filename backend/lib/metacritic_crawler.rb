@@ -15,9 +15,9 @@ def next_page(num_scraped)
   begin
     page      = @agent.get( url )
   rescue Mechanize::ResponseCodeError => e
-    sleep(30)
     puts e
     puts "Sleeping for 30 sec!"
+    sleep(30)
     retry
   end
 
@@ -42,7 +42,18 @@ def cycle_album_links(page)
     next if exists
 
     # Click Link to get page
-    new_page = link.click
+    begin
+      new_page = link.click
+    rescue Mechanize::ResponseCodeError => e
+      Waf.insert_error(e, link.href, link.href)
+      puts "Metacritic Error"
+      next
+    rescue SocketError => e
+      puts e
+      puts "sleeping for 30!"
+      sleep(30)
+      next
+    end
 
     #Check If page exists on Metacritic
     if new_page.search('span.error_code').text == '404'
@@ -80,7 +91,7 @@ def cycle_album_links(page)
   end
 end
 
-@letter = "b"
+@letter = "d"
 @page_num = 0
 starting_url = "http://www.metacritic.com/browse/albums/artist/" + @letter + "?num_items=100&page=" + @page_num.to_s
 @agent       = Mechanize.new

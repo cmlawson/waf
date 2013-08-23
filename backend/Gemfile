@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'discogs-wrapper', :path => "./lib/altered_gems/discogs"
 # Specify your gem's dependencies in rubber.gemspec
 gemspec
 

@@ -1,5 +1,6 @@
 module Waf
 
+  require 'bundler/setup'
   require 'resque'
   require 'sidekiq'
   require 'redis'
@@ -14,6 +15,8 @@ module Waf
   require 'open-uri'
   require 'hpricot'
   require 'require_all'
+  require 'discogs'
+
 
   require_rel 'waf'
 
